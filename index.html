@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Какво ще вечеряме?</title>
+    <meta name="description" content="Открийте вкусни идеи за вечеря с продуктите, които имате у дома. AI рецепти на български!">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Какво ще вечеряме?">
+    <meta property="og:description" content="Открийте вкусни идеи за вечеря с продуктите, които имате у дома. AI рецепти на български!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vecherq.vercel.app/">
+    <meta property="og:image" content="/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Какво ще вечеряме?</h1>
+            <p>Открийте вкусни идеи за вечеря с продуктите, които имате</p>
+        </div>
+
+        <div class="main-card" id="ingredientSelection">
+            <h2 class="section-title">Изберете наличните продукти:</h2>
+            
+            <div id="ingredientsContainer">
+                <!-- Ingredient categories will be populated by JavaScript -->
+            </div>
+
+            <div class="custom-ingredients">
+                <label for="customIngredients" style="display: block; margin-bottom: 10px; font-weight: bold;">Други продукти (разделени със запетая):</label>
+                <input type="text" id="customIngredients" placeholder="напр. домати, краставици, сирене...">
+            </div>
+
+            <button class="generate-btn" id="generateBtn" onclick="generateRecipes()">
+                🔍 Намери рецепти
+            </button>
+        </div>
+
+        <div class="recipe-suggestions" id="recipeSuggestions">
+            <div class="main-card">
+                <h2 class="section-title">Предложения за вечеря:</h2>
+                <div id="recipeList">
+                    <!-- Recipe suggestions will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-details" id="recipeDetails">
+            <!-- Full recipe details will appear here -->
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vecherq.vercel.app/sitemap.xml 
