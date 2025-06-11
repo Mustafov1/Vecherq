@@ -10,6 +10,10 @@ A Bulgarian recipe finder that suggests dinner ideas based on available ingredie
 - View detailed recipe instructions
 - Responsive design for all devices
 
+## Secure OpenAI API Usage
+
+For security, the OpenAI API key is stored as an environment variable and used only in Vercel Serverless Functions. The frontend communicates with `/api/openai` instead of directly with OpenAI.
+
 ## Setup
 
 1. Clone the repository:
@@ -37,7 +41,7 @@ The project is configured for deployment on Vercel:
 
 1. Push your code to GitHub
 2. Connect your repository to Vercel
-3. Add your OpenAI API key in Vercel's environment variables
+3. Add your OpenAI API key in Vercel's environment variables (as `OPENAI_API_KEY`)
 4. Deploy!
 
 ## Technologies Used

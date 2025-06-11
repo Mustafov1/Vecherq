@@ -1,7 +1,7 @@
-// Remove the hardcoded API key
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || '';
-
 // Bulgarian ingredients organized by category
+let selectedIngredients = [];
+let currentRecipes = [];
+
 const ingredientCategories = {
     'Месо и риба': [
         'пилешко месо', 'свинско месо', 'телешко месо', 'агнешко месо',
@@ -26,9 +26,6 @@ const ingredientCategories = {
         'олио', 'оцет', 'захар', 'сол'
     ]
 };
-
-let selectedIngredients = [];
-let currentRecipes = [];
 
 // Initialize the app
 function initApp() {
@@ -110,18 +107,12 @@ async function generateRecipes() {
 }
 
 async function callOpenAI(ingredients) {
-    if (!OPENAI_API_KEY) {
-        alert('Моля конфигурирайте вашия OpenAI API ключ');
-        return getSampleRecipes();
-    }
-
     const prompt = createPrompt(ingredients);
     
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch('/api/openai', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${OPENAI_API_KEY}`
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
             model: 'gpt-4o-mini',
